@@ -16,12 +16,13 @@ func main() {
 	var proxyPort int
 	var hostPort int
 	var proxyType string
+	zero := 0
 	flag.StringVar(&password, "pwrd", "", "proxy pwrd")
 	flag.StringVar(&username, "user", "", "proxy username")
 	flag.StringVar(&proxyType, "type", "", "proxy type")
 	flag.StringVar(&proxy, "proxy", "", "your name")
-	flag.IntVar(&proxyPort, "port", 0, "proxy port")
-	flag.IntVar(&hostPort, "port", 0, "host port")
+	flag.IntVar(&proxyPort, "port", zero, "proxy port")
+	flag.IntVar(&hostPort, "hport", zero, "host port")
 	flag.Parse()
 	if strings.Contains(proxy, "http://") {
 		proxy = strings.Replace(proxy, "http://", "", 1)
